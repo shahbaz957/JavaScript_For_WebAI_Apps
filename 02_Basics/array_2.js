@@ -1,6 +1,6 @@
 // ****************** Array ********************
 const marvel = ["thor" , "hulk"]
-const dc = ["Flask" , "WonderWoman"]
+const dc = ["Flash" , "WonderWoman"]
 // marvel.push(dc)
 // console.log(marvel)
 // console.log(marvel[2][1])
