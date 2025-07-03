@@ -1,0 +1,5 @@
+Developers moved completely from var to let for the declaration of variable cuz var declared variable are not scope bound they can be accessed outside the block where it is declared which cause serious issues but 
+on the other hand variable declared by let is not accessible out of the scope and is always remain bounded to its scope another reason is that var allow the redeclaration of variable with same name which may cause many potential issues on production level
+while let do not allow you to do this
+
+************************************* Written by : Mirza Shahbaz Ali Baig *******************************************
