@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Buttons</title>
+  </head>
+  <style>
+    body{
+        margin: 0;
+        padding: 0;
+        background-color: #212121;
+        color: #fff;
+    }
+    .buttons{
+        display: flex;
+        justify-content: space-evenly;
+
+    }
+    .button{
+        height: 200px;
+        width: 200px;
+        border-radius: 30px;
+        border: 2px solid black;
+    }
+    #yellow{
+        background-color: yellow;
+    }
+    #purple{
+        background-color: purple;
+    }
+    #grey{
+        background-color: grey;
+    }
+    #red{
+        background-color: red;
+    }
+  </style>
+  <body>
+    <h1>Color Scheme Switcher</h1>
+    <div class="buttons">
+      <span class="button" id = "yellow"></span>
+      <span class="button" id = "purple"></span>
+      <span class="button" id="grey"></span>
+      <span class="button" id="red"></span>
+    </div>
+    <h2>try clicking one of the color above to change background color into that color</h2>
+  </body>
+  <script src="color.js"></script>
+</html>
