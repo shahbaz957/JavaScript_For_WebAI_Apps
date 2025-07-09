@@ -1,0 +1,43 @@
+<!-- Use appendChild approach instead of writing innerHTML because in innerHTML you have to traverse the complete tree which is not the optiimize way of doing things  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | in rainy weather</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+    <script>
+        // using innerHTML method\
+        function addlang(langName){
+            const li = document.createElement('li')
+            li.innerHTML = `${langName}`
+            document.querySelector('.language').appendChild(li)
+        }
+        addlang("Python")
+        addlang("Golang")
+        addlang("Java")
+        // more optimization using appendChild direct use
+        function addOptiLang(langName){
+            const li = document.createElement('li')
+            li.appendChild(document.createTextNode(langName))
+            document.querySelector('.language').appendChild(li)
+        }
+        // Edit elements of HTML
+        const secLang = document.querySelector("li:nth-child(2)")
+        console.log(secLang)
+        // seclang.innerHTML = "Rust"
+        const newli = document.createElement('li')
+        newli.textContent = "C++"
+        secLang.replaceWith(newli)
+        // remove element
+
+        const lastLang = document.querySelector("li:last-child")
+        lastLang.remove()
+
+    </script>
+</body>
+</html>
