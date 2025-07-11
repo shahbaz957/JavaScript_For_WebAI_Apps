@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Events</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing image</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            id="photoshop"
+            src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="japan"
+            src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="river"
+            src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="owl"
+            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="prayer"
+            src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <a
+            style="color: aliceblue"
+            href="https://google.com"
+            id="google"
+            target="_blank"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    // // Browser Events are the activities that dont run sequentially but invoke when specific activity occur in the browser
+    // // document.getElementById('owl').onclick = function (){
+    // //     alert("Owl is clicked")
+    // // }
+    // document.getElementById("owl").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     alert("The owl is clicked again");
+    //     e.stopPropagation()
+    //     console.log(e);
+    //     // List of Events to be learn by your own
+    //     // timestamp , type , defaultPrevent , target , toElement  , srcElement , currentTarget,
+    //     // clientX , clientY , ScreenX , screenY , altkey , shiftkey , ctrlkey , keyCode
+    //   },
+    //   false
+    // ); // Event Propagation (this true/false are event Propagation )  Event Bubbling
+
+    // // True -> Event Capturing
+    // // False -> Event Bubling
+
+    // // Event capturing goes from top to bottom while Event Bubbling goes from bottom to top
+    // document.getElementById("images").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     alert("ul is clicked");
+    //   },
+    //   false
+    // );
+    // document.getElementById('google').addEventListener('click' ,function(e){
+    //   e.preventDefault();
+    //   e.stopPropagation();
+    //   console.log("Google is Clicked")
+    // } , false)
+    // document.querySelector("#images").addEventListener("click", function (e) {
+    //   if (e.target.tagName === "IMG") {
+    //     console.log(e.target.id);
+    //     let removeEl = e.target.parentNode;
+    //     removeEl.remove();
+    //   }
+    // });
+    document.getElementById('owl').addEventListener('click' , function(e){
+          if (e.altKey) console.log("Alt key was held!");
+          if (e.shiftKey) console.log("Shift key was held!");
+          if (e.ctrlKey) console.log("Ctrl key was held!");
+    })
+  </script>
+</html>
