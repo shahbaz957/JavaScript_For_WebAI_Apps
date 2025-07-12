@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #212121;
+      color: #fff;
+    "
+  ></body>
+  <script>
+    const reqUrl = "https://api.github.com/users/shahbaz957";
+    const xhr = new XMLHttpRequest();
+    // console.log(xhr.readyState)
+    xhr.open("GET", reqUrl);
+    // console.log(xhr.readyState)
+    xhr.onreadystatechange = function () {
+      // onreadystateChange is a function that monitors the readystate change continuosly
+      console.log(xhr.readyState);
+      if (xhr.readyState === 4) {
+        const data = JSON.parse(this.responseText);
+        console.log(data);
+        // console.log(typeof data)
+        // console.log(data.followers)
+        const div = document.createElement("div");
+        const imageURL = data.avatar_url;
+        //   console.log(imageURL)
+        div.innerHTML = `<img src = "${imageURL}" height = "245px" width = "245px">`;
+        document.body.appendChild(div);
+        const img = div.firstChild;
+        img.style.borderRadius = "20%";
+        const p = document.createElement("p");
+        const bio = data.bio;
+        const h2 = document.createElement("h2");
+        const login = data.login;
+        h2.innerHTML = `${login}`;
+        h2.style.paddingLeft = "10px";
+        div.appendChild(h2);
+        //   console.log(bio)
+        p.innerHTML = `${bio}`;
+        p.style.paddingLeft = "10px";
+        div.appendChild(p);
+        div.style.maxWidth = "245px";
+        div.style.border = "2px solid yellow";
+        div.style.borderRadius = "20px";
+      }
+    };
+    xhr.send();
+  </script>
+</html>
