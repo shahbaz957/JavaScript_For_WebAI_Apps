@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure in JS</title>
+  </head>
+  <body>
+    <button id="blue">Blue</button>
+    <button id="green">Green</button>
+  </body>
+  <script>
+    function handleColor(color) {
+      return function () {
+        document.body.style.backgroundColor = `${color}`;
+      }; // here's the concept of closure is used because here the not the function is returned but the whole lexical scope of function is returned which is why function is able to get the value of color so two concepts are covered one is lexical scoping and second is closure
+    }
+    document.getElementById("blue").onclick = handleColor("blue");
+    document.getElementById("green").onclick = handleColor("green");
+  </script>
+</html>
